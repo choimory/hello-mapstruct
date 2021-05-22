@@ -17,11 +17,12 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public List<CompanyDto> getCompanies(CompanyDto param, Pageable pageable) {
-        return null;
+        return companyMapper.toDto(companyRepository.findAll(pageable));
     }
 
     @Override
     public CompanyDto getCompany(CompanyDto param) {
-        return null;
+        return companyMapper.toDto(companyRepository.findById(param.getId())
+                                                    .orElse(null));
     }
 }
