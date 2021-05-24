@@ -1,8 +1,11 @@
 package com.practice.hellomapstruct.company.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.practice.hellomapstruct.employee.dto.EmployeeDto;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Builder
 @Getter
@@ -16,4 +19,5 @@ public class CompanyDto {
     private String businessType;
     private String address;
     private LocalDateTime foundationDateTime;
+    private List<EmployeeDto> employees;
 }

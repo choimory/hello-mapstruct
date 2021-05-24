@@ -17,6 +17,8 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public List<CompanyDto> getCompanies(CompanyDto param, Pageable pageable) {
+        // 스프링 DI를 사용하지 않을시
+        // return CompanyMapper.INSTANCE.toDto(companyRepository.findAll(pageable));
         return companyMapper.toDto(companyRepository.findAll(pageable));
     }
 
